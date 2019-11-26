@@ -12,13 +12,25 @@ export default class Song {
 
   get Template() {
     return `
-
+    <div class="col-12">
+    <h4>${this.title}: ${this.artist}</h4>
+          <img src="${this.albumArt}" alt="${this.album} cover" />
+          <audio controls src="${this.preview}"></audio>
+          <h4>Album: ${this.album} | Price: ${this.price}</h4>
+          <button type="button" class="btn btn-primary" onclick="app.songsController.addSong('${this._id}')">add</button>
+          </div>
         `;
   }
 
   get playlistTemplate() {
     return `
-
+    <div class="col-12">
+    <h4>${this.title}: ${this.artist}</h4>
+          <img src="${this.albumArt}" alt="${this.album} cover" />
+          <audio controls src="${this.preview}"></audio>
+          <h4>Album: ${this.album} | Price: ${this.price}</h4>
+          <button type="button" class="btn btn-danger" onclick="app.songsController.removeSong('${this._id}')">delete</button>
+          </div>
         `;
   }
 }
